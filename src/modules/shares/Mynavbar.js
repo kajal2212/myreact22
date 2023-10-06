@@ -19,10 +19,14 @@ function Mynavbar() {
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <Link className="nav-link active" aria-current="page" to="pp">Home</Link>
+                                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="pp">About
+                                        <Link className="nav-link" to="myabout">About
+                                        </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                        <Link className="nav-link" to="mycontacts">contacts
                                         </Link>
                                     </li>
                                     <li className="nav-item dropdown">
