@@ -10,6 +10,8 @@ import Myaboutpage from './modules/components/Myaboutpage';
 import Mycontactspage from './modules/components/Mycontactspage';
 import Myerrorpage from './modules/components/Myerrorpage';
 import Myaxios from './modules/components/Myaxios';
+import Mygraphpage from './modules/components/Mygraphpage';
+import Productdetails from './modules/components/Productdetails';
 
 
 
@@ -23,7 +25,9 @@ root.render(
       <Route path='/' element={<Mylandingpage/>}></Route>
       <Route path='myabout' element={<Myaboutpage/>}/>
       <Route path='mycontacts' element={<Mycontactspage/>}/>
+      <Route path='mygraph' element={<Mygraphpage/>}/>
       <Route path='myaxiosdata' element={<Myaxios/>}/>
+      <Route path='myaxiosdata/details/:id' element={<Productdetails/>}/>
       <Route path='*' element={<Myerrorpage/>}/>
     </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+// import { Link } from 'react-router-dom'
 import { mydata } from './Mydata'
 
 function Mycontactspage() {
@@ -40,7 +40,7 @@ function Mycontactspage() {
             <div className='col-md-3'>
 
               <div className="card text-bg-dark mb-3">
-                <img src={d.myimg} className='rounded-circle' />
+                <img src={d.myimg} className='rounded-circle' alt='radius pix' />
                 <h2 className='text-center'>name of users</h2>
               </div>
               </div>
