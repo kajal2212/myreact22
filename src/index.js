@@ -9,6 +9,7 @@ import Mylandingpage from './modules/components/Mylandingpage';
 import Myaboutpage from './modules/components/Myaboutpage';
 import Mycontactspage from './modules/components/Mycontactspage';
 import Myerrorpage from './modules/components/Myerrorpage';
+import Myaxios from './modules/components/Myaxios';
 
 
 
@@ -22,6 +23,7 @@ root.render(
       <Route path='/' element={<Mylandingpage/>}></Route>
       <Route path='myabout' element={<Myaboutpage/>}/>
       <Route path='mycontacts' element={<Mycontactspage/>}/>
+      <Route path='myaxiosdata' element={<Myaxios/>}/>
       <Route path='*' element={<Myerrorpage/>}/>
     </Routes>
     </BrowserRouter>

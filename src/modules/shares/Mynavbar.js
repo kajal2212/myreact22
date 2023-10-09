@@ -26,6 +26,14 @@ function Mynavbar() {
                                         </Link>
                                         </li>
                                         <li className="nav-item">
+                                        <Link className="nav-link" to="mygraph">graph
+                                        </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                        <Link className="nav-link" to="myaxiosdata">axios
+                                        </Link>
+                                        </li>
+                                        <li className="nav-item">
                                         <Link className="nav-link" to="mycontacts">contacts
                                         </Link>
                                     </li>
