@@ -36,7 +36,7 @@ function Mygraphpage() {
     >
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      {/* <YAxis /> */}
+      <YAxis />
       <Tooltip />
       <Legend />
       <Bar dataKey="love" fill="red" />

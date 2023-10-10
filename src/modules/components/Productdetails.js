@@ -4,18 +4,18 @@ import { useParams } from 'react-router-dom';
 
 function Productdetails() {
  const {id} = useParams();
-//  console.log(id);
+ console.log(id);
  const[singledata,singlefun]=useState({})
  const mysingledata = ()=>{
   axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`).then((u)=>{
-    // console.log(u.data);
+    console.log(u.data);
     singlefun(u.data);
   }
   )
  }
  useEffect(()=>{
   mysingledata();
-},[])
+})
 return (
   <div className='container'>
     <div className='row'>

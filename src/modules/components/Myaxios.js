@@ -8,7 +8,7 @@ function Myaxios() {
 
   const myapi = () => {
     axios.get('https://jsonplaceholder.typicode.com/todos').then((u) => {
-      // console.log(u.data);
+      console.log(u.data);
       sfunc(u.data);
     })
   }
@@ -33,7 +33,7 @@ function Myaxios() {
                     <h5 className="card-title">{u.id}</h5>
                       <h5 className="card-title">{u.title}</h5>
                       <p className="card-text">{u.userId}</p>
-                      <a href="#" className="btn btn-primary">{u.completed === true ? "Yes" :"No"}</a>
+                      <Link href="#" className="btn btn-primary">{u.completed === true ? "Yes" :"No"}</Link>
                       <Link to={`details/`+u.id}>view details</Link>
                     </div>
                 </div>
