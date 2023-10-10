@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 function Mynavbar() {
     return (
         <Fragment>
-            <div className='container-fluid bg-body-danger'>
+            <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-12'>
-                        <nav className="navbar navbar-expand-lg bg-danger">
+                        <nav className="navbar navbar-expand-lg bg-body-tertiary">
                             <div className="container-fluid">
                                 <Link className="navbar-brand" to="pp">Navbar</Link>
                                 <button className="navbar-toggler" role="button" adta-bs-toggle="collapse" adta-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,17 +56,19 @@ function Mynavbar() {
                                             <Link className="nav-link disabled" aria-disabled="true">Disabled</Link>
                                         </li>
                                     </ul>
-                                    <div class="dropdown">
-                                        <a to="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"/>
-                                                <strong>username</strong>
+                                    <form className="d-flex me-5" role="search">
+                                    <div className="dropdown me-3">
+                                        <a href="#" className="d-flex align-items-center text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
+                                            <strong>username</strong>
                                         </a>
-                                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" data-popper-placement="top-start">
-                                            <li><Link className="dropdown-item" to="#">Login</Link></li>
+                                        <ul className="dropdown-menu dropdown-menu-light text-small shadow" data-popper-placement="top-start" >
+                                            <li><a className="dropdown-item" href="#">Login</a></li>
                                             <li><Link className="dropdown-item" to="registor">Registor</Link></li>
                                             <li><Link className="dropdown-item" to="/">Sign out</Link></li>
                                         </ul>
                                     </div>
+                                </form>
 
                                 </div>
                             </div>
