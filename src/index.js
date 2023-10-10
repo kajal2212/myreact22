@@ -13,6 +13,7 @@ import Myaxios from './modules/components/Myaxios';
 import Mygraphpage from './modules/components/Mygraphpage';
 import Productdetails from './modules/components/Productdetails';
 import Myregistorpage from './modules/auth/Myregistorpage';
+import Myservicepage from './modules/components/Myservicepage';
 
 
 
@@ -30,6 +31,7 @@ root.render(
       <Route path='myaxiosdata' element={<Myaxios/>}/>
       <Route path='myaxiosdata/details/:id' element={<Productdetails/>}/>
       <Route path='registor' element={<Myregistorpage/>}/>
+      <Route path='myservice' element={<Myservicepage/>}/>
       
       <Route path='*' element={<Myerrorpage/>}/>
     </Routes>
