@@ -1,23 +1,32 @@
 import React from "react";
+import {useForm} from 'react-hook-form';
 
 function Myregistorpage() {
+    const {register,handleSubmit, formState: { errors }} = useForm();
+
+    const mysubmit=(alldata)=>{
+        console.log(alldata);
+    }
     return (
+        <form onSubmit={handleSubmit(mysubmit)}>
         <div className="container page border mt-5 shadow p-3 bg-danger">
             <div className="row">
                 <div className="col-12">
                     <h1 className="text-center">Registor Page</h1>
                 </div>
-                <div class="col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">username</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="your username" />
+                <div className="col-md-6">
+                    <label for="exampleFormControlInput1" className="form-label">username</label>
+                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="your username" {...register("name",{ required: true })} />
+                    {errors.name && <span style={{color:'white'}}>full name is required</span>}
                 </div>
-                <div class="col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+                <div className="col-md-6">
+                    <label for="exampleFormControlInput1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" {...register("email",{ required: true })} />
+                    {errors.email && <span style={{color:'white'}}>email is required</span>}
                 </div>
-                <div class="col-md-6">
-                    <label for="exampleFormControlTextarea1" class="form-label">gender</label>
-                    <select className="form-control" >
+                <div className="col-md-6">
+                    <label for="exampleFormControlTextarea1" className="form-label">gender</label>
+                    <select className="form-control" {...register("gender",{ required: true })} >
                             <option>Male</option>
                             <option>Female</option>
                             <option>Other</option>
@@ -25,24 +34,34 @@ function Myregistorpage() {
                 </div>
                
                 
-                <div class="col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">password</label>
-                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="can be alphabet,numbers or special characters" />
+                <div className="col-md-6">
+                    <label for="exampleFormControlInput1" className="form-label">password</label>
+                    <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="can be alphabet,numbers or special characters" {...register("pass",{ required: true,pattern: /^[A-Za-z]+$/i })}/>
+                    {errors.pass && <span style={{color:'white'}}>password is required</span>}
                 </div>
-                <div class="col-12">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+               
+                <div className="col-md-6">
+                    <label for="exampleFormControlTextarea1" className="form-label"> textarea</label>
+                    <textarea className="form-control" defaultvalue="type text" rows="3" {...register("text",{ required: true, maxLength: 50 })}></textarea>
+                    {errors.text && <span style={{color:'white'}}>remark is required</span>}
+                </div>
+                <div className="col-md-6">
+                    <label for="exampleFormControlInput1" className="form-label">confirm password</label>
+                    <input type="password" className="form-control" id="exampleFormControlInput1" {...register("cpass",{ required: true})}/>
+                    {errors.cpass && <span style={{color:'white'}}>password is required</span>}
+                    {errors.pass===errors.cpass && <span style={{color:'white'}}>password does not match</span>}
                 </div>
                 <div className='col-md-12 p-1 text-center'>
                     <button type='submit' className='btn btn-success'> Submit</button>
                     <button type='button' className='btn btn-danger ms-3'> Cancel</button>
                 </div>
 
-
+                
 
 
             </div>
         </div>
+        </form>
 
 
 

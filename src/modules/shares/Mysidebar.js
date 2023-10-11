@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Mysidebar() {
   return (
     <div className="flex-shrink-0 p-3 border" >
-      <Link to="/" classname="d-flex align-items-center pb-3 mb-3 link-body-emphasis border-bottom">
+      <Link to="/" className="d-flex align-items-center pb-3 mb-3 link-body-emphasis border-bottom">
         <span className="fs-5 fw-semibold">Collapsible</span>
       </Link>
       <ul className="list-unstyled ps-0">
@@ -15,8 +15,8 @@ function Mysidebar() {
           <div className="collapse" id="home-collapse">
             <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><Link to="buy" className="link-body-emphasis d-inline-flex text-decoration-none rounded">buy</Link></li>
-              <li><Link to="mobile" className="link-body-emphasis d-inline-flex text-decoration-none rounded">repair</Link></li>
-              <li><Link to="repair" className="link-body-emphasis d-inline-flex text-decoration-none rounded">replace</Link></li>
+              <li><Link to="repair" className="link-body-emphasis d-inline-flex text-decoration-none rounded">repair</Link></li>
+              <li><Link to="replace" className="link-body-emphasis d-inline-flex text-decoration-none rounded">replace</Link></li>
             </ul>
           </div>
         </li>
