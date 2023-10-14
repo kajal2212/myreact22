@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Mylandingpage()
 {
+    const { loginWithRedirect } = useAuth0();
     const [svariable,sfunction]=useState(30)
 
     const myfunction = ()=>{
@@ -24,6 +26,7 @@ function Mylandingpage()
     return(
         <div>
             <h1>Mylandingpage</h1>
+             <button onClick={() => loginWithRedirect()}>Log In</button>;
             {/* public image import type */}
         <img src="photos/img.jfif" width="500" alt="public pix"/>
         <button type="button" onClick={myfunction} >alert function</button>

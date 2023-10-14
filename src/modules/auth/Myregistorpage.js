@@ -42,7 +42,7 @@ function Myregistorpage() {
                
                 <div className="col-md-6">
                     <label for="exampleFormControlTextarea1" className="form-label"> textarea</label>
-                    <textarea className="form-control" defaultvalue="type text" rows="3" {...register("text",{ required: true, maxLength: 50 })}></textarea>
+                    <textarea className="form-control" defaultvalue="type text" rows="5" {...register("text",{ required: true,maxLength:20})}></textarea>
                     {errors.text && <span style={{color:'white'}}>remark is required</span>}
                 </div>
                 <div className="col-md-6">

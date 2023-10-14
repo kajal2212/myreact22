@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 function Myaxios() {
   const [svariable, sfunc] = useState([])
+  const [kk, sk] = useState([])
+  const [pic, setpic] = useState([])
 
   const myapi = () => {
     axios.get('https://jsonplaceholder.typicode.com/todos').then((u) => {
@@ -13,16 +15,35 @@ function Myaxios() {
     })
   }
 
+  const myapiconst=() =>{
+    axios.get ("https://dummyjson.com/products").then((kaj)=>{
+      console.log(kaj.data.products);
+      sk(kaj.data.products);
+      setpic(kaj.data.products[0].images);
+      console.log(kaj.data.products[0].images);
+
+    })
+  }
+
   useEffect(()=>{
     myapi();
-  },[]
-  )
+    myapiconst();
+  },[])
   return (
     <div>
       <button type='button' onClick={myapi}>get data</button>
       Myaxios
       <div className='container'>
         <div className='row'>
+          {pic.map((a,k)=>{
+            return(
+              <div className='col' key={k}>
+                <img src={a} width={200}></img>
+
+              </div>
+            )
+          }
+          )}
           
             {svariable.map((u) => {
               return (

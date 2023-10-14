@@ -16,12 +16,24 @@ import Myregistorpage from './modules/auth/Myregistorpage';
 import Myservicepage from './modules/components/Myservicepage';
 import Buymobile from './modules/components/subrouting/Buymobile';
 import Repairmobile from './modules/components/subrouting/Repairmobile';
+import Registertablepage from './modules/components/Registertablepage';
+import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider } from 'react-redux';
+import Mystore from './modules/components/Reduxprogram/Mystore';
+import Reduxpage from './modules/components/Reduxprogram/Reduxpage';
+import Myloginpage from './modules/auth/Myloginpage';
+
 
 const Mylazym = lazy(()=>import('./modules/components/Lazyloadingpage'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Auth0Provider domain="dev-28irqto2x8ooi28m.us.auth0.com" clientId="wVkUs3RFEU3mxIpLiZnhsB45XzCWMOzw"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}>
+    <Provider store={Mystore}>
     
     <BrowserRouter>
     <Mynavbar/>
@@ -33,6 +45,8 @@ root.render(
       <Route path='myaxiosdata' element={<Myaxios/>}/>
       <Route path='myaxiosdata/details/:id' element={<Productdetails/>}/>
       <Route path='registor' element={<Myregistorpage/>}/>
+      <Route path='login' element={<Myloginpage/>}/>
+      <Route path='table' element={<Registertablepage/>}/>
       <Route path='myservice' element={<Myservicepage/>}>
       <Route path='buy' element={<Buymobile/>}/>
       <Route path='repair' element={<Repairmobile/>}/>
@@ -45,9 +59,14 @@ root.render(
         </Suspense>
       }></Route>
       
+      
       <Route path='*' element={<Myerrorpage/>}/>
+      <Route path='redux' element={<Reduxpage/>}/>
+      
     </Routes>
     </BrowserRouter>
+    </Provider>
+    </Auth0Provider>
   </React.StrictMode>
 );
 

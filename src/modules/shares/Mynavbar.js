@@ -45,6 +45,14 @@ function Mynavbar() {
                                             <Link className="nav-link" to="lazyloading">lazy
                                             </Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="redux">redux
+                                            </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" to="table">registertable
+                                            </Link>
+                                        </li>
                                         
 
                                         <li className="nav-item dropdown">
@@ -64,12 +72,12 @@ function Mynavbar() {
                                     </ul>
                                     <form className="d-flex me-5" role="search">
                                     <div className="dropdown me-3">
-                                        <a href="#" className="d-flex align-items-center text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
+                                        <a to="#" className="d-flex align-items-center text-decoration-none dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
                                             <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
                                             <strong>username</strong>
                                         </a>
                                         <ul className="dropdown-menu dropdown-menu-light text-small shadow" data-popper-placement="top-start" >
-                                            <li><a className="dropdown-item" href="#">Login</a></li>
+                                            <li><Link className="dropdown-item" to="login">Login</Link></li>
                                             <li><Link className="dropdown-item" to="registor">Registor</Link></li>
                                             <li><Link className="dropdown-item" to="/">Sign out</Link></li>
                                         </ul>
